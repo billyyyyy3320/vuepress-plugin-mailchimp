@@ -1,5 +1,5 @@
-import Newsletter from "./Newsletter.vue";
+import SimpleNewsletter from "./SimpleNewsletter.vue";
 
 export default ({ Vue }) => {
-  Vue.component("Newsletter", Newsletter);
+  Vue.component("SimpleNewsletter", SimpleNewsletter);
 };

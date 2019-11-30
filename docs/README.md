@@ -2,4 +2,4 @@
 
 ## Demo
 
-<Newsletter/>
+<SimpleNewsletter/>
