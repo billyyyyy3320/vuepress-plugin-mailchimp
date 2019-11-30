@@ -1,0 +1,31 @@
+{
+  "name": "vuepress-plugin-mailchimp",
+  "version": "0.0.1",
+  "description": "A VuePress plugin for Mailchimp subscriptions",
+  "keywords": [
+    "mailchimp",
+    "newsletter",
+    "plugin",
+    "vuepress"
+  ],
+  "bugs": {
+    "url": "https://github.com/newsbielt703/vuepress-plugin-mailchimp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "newsbielt703/vuepress-plugin-mailchimp"
+  },
+  "license": "MIT",
+  "author": "Billyyyyy3320 <newsbielt703@gmail.com>",
+  "main": "src/index.js",
+  "scripts": {
+    "build:docs": "vuepress build docs --temp docs/.temp",
+    "dev:docs": "vuepress dev docs --temp docs/.temp"
+  },
+  "dependencies": {
+    "jsonp": "^0.2.1"
+  },
+  "devDependencies": {
+    "vuepress": "^1.2.0"
+  }
+}
