@@ -1,8 +1,8 @@
 # vuepress-plugin-mailchimp
 
-Simplifies subscribing new email addresses to a Mailchimp email list.
-
 [![NPM version](https://img.shields.io/npm/v/vuepress-plugin-mailchimp)](https://www.npmjs.com/package/vuepress-plugin-mailchimp)
+
+Simplifies subscribing new email addresses to a Mailchimp email list.
 
 ## Install
 
