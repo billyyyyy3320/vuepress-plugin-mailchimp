@@ -12,8 +12,9 @@
       required
       autocapitalize="off"
       autocorrect="off"
+      data-cy="email"
     />
-    <input type="submit" class="newsletter__button" />
+    <input type="submit" class="newsletter__button" data-cy="submit" />
   </form>
 </template>
 
@@ -32,7 +33,7 @@ export default {
   methods: {
     onSubmit() {
       addToMailchimp(this.mail).then(res => {
-        console.log(res);
+        this.mail = "";
       });
     }
   }
