@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       mail: "",
-      title: title || "NewSletter",
+      title: title || "Newsletter",
       content: content || "Subscribe to get my lastest content. No spam."
     };
   },
