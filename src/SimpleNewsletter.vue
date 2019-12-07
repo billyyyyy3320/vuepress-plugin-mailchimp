@@ -14,9 +14,7 @@
       autocorrect="off"
       data-cy="email"
     />
-    <button type="submit" class="newsletter__button" data-cy="submit">
-      subscribe
-    </button>
+    <button type="submit" class="newsletter__button" data-cy="submit">subscribe</button>
   </form>
 </template>
 
@@ -54,27 +52,31 @@ export default {
   font-size 1rem
   box-sizing border-box
   color $textColor
+
   &__title
     font-size 1.7rem
+
   &__content
     margin-top 1.5rem
     margin-bottom 1.5rem
     line-height 1.7rem
+
   &__input
     font-size inherit
-    border 1px solid $borderColor;
+    border 1px solid $borderColor
     width 100%
-    padding .6rem 1.2rem
+    padding 0.6rem 1.2rem
     box-sizing border-box
     border-radius 3px
-    margin-bottom .8rem
+    margin-bottom 0.8rem
+
   &__button
     font-size inherit
     border none
     cursor pointer
     background $accentColor
     color #fff
-    padding .6rem 1.8rem
+    padding 0.6rem 1.8rem
     box-sizing border-box
     border-radius 3px
     width 100%
