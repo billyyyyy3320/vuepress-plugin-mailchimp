@@ -4,10 +4,9 @@ let { endpoint } = JSON.parse(MAILCHIMP_OPTIONS);
 
 const subscribeToMailchimp = function addToMailchimp(email, fields) {
   const emailEncoded = encodeURIComponent(email);
-
   endpoint = endpoint.replace(/\/post/g, "/post-json");
-  const listFields = queryString.stringify(fields);
-  const queryParams = `&email=${emailEncoded}&${listFields}`;
+  const listFields = listFields ? "&" + queryString.stringify(fields) : "";
+  const queryParams = `&EMAIL=${emailEncoded}${listFields}`;
   const url = `${endpoint}${queryParams}`;
 
   return new Promise((resolve, reject) =>
