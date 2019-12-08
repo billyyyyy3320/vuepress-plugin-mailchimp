@@ -69,6 +69,7 @@ export default {
     box-sizing border-box
     border-radius 3px
     margin-bottom 0.8rem
+    outline none
 
   &__button
     font-size inherit
@@ -80,4 +81,5 @@ export default {
     box-sizing border-box
     border-radius 3px
     width 100%
+    outline none
 </style>
