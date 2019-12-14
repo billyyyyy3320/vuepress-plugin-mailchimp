@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-mailchimp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A VuePress plugin for Mailchimp subscriptions",
   "keywords": [
     "mailchimp",
@@ -19,10 +19,11 @@
   "author": "Billyyyyy3320 <newsbielt703@gmail.com>",
   "main": "src/index.js",
   "scripts": {
-    "build:docs": "vuepress build docs --temp docs/.temp",
-    "dev:docs": "vuepress dev docs --temp docs/.temp",
+    "build": "vuepress build docs --temp docs/.temp",
+    "dev": "vuepress dev docs --temp docs/.temp",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "prepublishOnly": "yarn cypress run && yarn build"
   },
   "dependencies": {
     "jsonp": "^0.2.1",
