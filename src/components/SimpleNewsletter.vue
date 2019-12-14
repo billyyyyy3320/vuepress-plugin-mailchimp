@@ -35,10 +35,15 @@ export default {
   },
   methods: {
     onSubmit() {
-      addToMailchimp(this.mail).then(res => {
-        this.mail = "";
-        if (popupEnabled) event.$emit("submited", res);
-      });
+      addToMailchimp(this.mail)
+        .catch(err => {
+          this.mail = "";
+          if (popupEnabled) event.$emit("submited", { result: "error" });
+        })
+        .then(res => {
+          this.mail = "";
+          if (popupEnabled) event.$emit("submited", res);
+        });
     }
   }
 };
