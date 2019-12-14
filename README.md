@@ -23,11 +23,48 @@ module.exports = {
   plugins: [
     "vuepress-plugin-mailchimp",
     {
-      /* options */
+      // You need to provide this plugin with your Mailchimp endpoint in order for it
+      // to know where to save the email address. See more detail in Config section.
       endpoint: ""
     }
   ]
 };
+```
+
+### `<SimpleNewsletter/>`
+
+This plugin provides a out-of-box component. Since it has been registered automatically, you can simply use it in your `.md` file.
+
+- Source code:[SimpleNewsletter.vue](https://github.com/newsbielt703/vuepress-plugin-mailchimp/blob/master/src/SimpleNewsletter.vue)
+- Usage:
+
+```md
+// .md file
+
+...
+your content
+...
+
+<SimpleNewsletter/>
+```
+
+or
+
+```vue
+// .vue file
+
+<template>
+  <SimplePagination />
+</template>
+
+<script>
+import { SimpleNewsletter } from "vuepress-plugin-mailchimp/src/SimpleNewsletter";
+export default {
+  components: {
+    SimpleNewsletter
+  }
+};
+</script>
 ```
 
 Check out the full [documentation](https://vuepress-plugin-mailchimp.billyyyyy3320.com/).
