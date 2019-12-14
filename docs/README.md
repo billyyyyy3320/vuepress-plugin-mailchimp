@@ -127,9 +127,62 @@ A custom component to replace the default popup component.
 
 ## UI Customization
 
-The default popup component provides a default slot which gives you the ability to fully control the appearance of the popup.
+### NewSletter
 
-First, you need to create a global component (e.g. MyPopup) at .vuepress/components. There're some slot props `enabled`, `message`, `isError` to simplifies your customization:
+The out-of-box component provides a default slot which gives you the ability to fully control the appearance.
+
+First, you need to create a global component (e.g. MyNewsletter) at .vuepress/components. There're some slot props to simplifies your customization:
+
+- `title`: The title you've set in [config](#title)
+- `content`The content you've set in [config](#content)
+- `mail`: No matter how you customize, you still need an email input. Please make sure binding this prop to the field.
+
+```vue
+<template>
+  <SimpleNewsletter v-slot="{ title, content, mail }">
+    <div class="my-title">{{ title }}</div>
+    <div class="my-content">{{ content }}</div>
+    <input
+      class="my-input"
+      type="email"
+      name="email"
+      aria-label="Email"
+      placeholder="Email"
+      v-model="mail"
+      required
+      autocapitalize="off"
+      autocorrect="off"
+      data-cy="email"
+    />
+    <button type="submit" class="my-button" data-cy="submit">
+      STAY UP TO DATE
+    </button>
+  </SimpleNewsletter>
+</template>
+
+<script>
+import SimpleNewsletter from "vuepress-plugin-mailchimp/src/components/SimpleNewsletter";
+export default {
+  components: { SimpleNewsletter }
+};
+</script>
+
+<style>
+/* your style */
+</style>
+```
+
+:::warning
+A submit button is required.
+:::
+
+### Popup
+
+The popup component also provides a default slot and slot props:
+
+- `enabled`: Whether the user have made subscription or not. It's probably the time for rendering.
+- `message`: Default is `Thank you for subscribing!` or `Request failed!`.
+- `isError`: You'll need it if you'd like to have different ui when the subscribing is failed.
 
 ```vue
 <template>
@@ -148,21 +201,8 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-.submit-popup
-  position fixed
-  right 1em
-  top 5em
-  padding 1em
-  border-radius 3px
-  background green
-  text-align center
-  z-index 2
-  button
-    margin-top 0.5em
-    padding 0.25em 2em
-  &.error
-    border-color red
+<style>
+/* your style */
 </style>
 ```
 

@@ -1,22 +1,24 @@
 <template>
   <form @submit.prevent="onSubmit" class="newsletter">
-    <div class="newsletter__title">{{ title }}</div>
-    <div class="newsletter__content">{{ content }}</div>
-    <input
-      class="newsletter__input"
-      type="email"
-      name="email"
-      aria-label="Email"
-      placeholder="Email"
-      v-model="mail"
-      required
-      autocapitalize="off"
-      autocorrect="off"
-      data-cy="email"
-    />
-    <button type="submit" class="newsletter__button" data-cy="submit">
-      subscribe
-    </button>
+    <slot :title="title" :content="content" :mail="mail">
+      <div class="newsletter__title">{{ title }}</div>
+      <div class="newsletter__content">{{ content }}</div>
+      <input
+        class="newsletter__input"
+        type="email"
+        name="email"
+        aria-label="Email"
+        placeholder="Email"
+        v-model="mail"
+        required
+        autocapitalize="off"
+        autocorrect="off"
+        data-cy="email"
+      />
+      <button type="submit" class="newsletter__button" data-cy="submit">
+        subscribe
+      </button>
+    </slot>
   </form>
 </template>
 

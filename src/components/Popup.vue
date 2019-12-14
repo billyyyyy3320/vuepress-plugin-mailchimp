@@ -6,7 +6,9 @@
         class="submit-popup"
         :class="{ error: isError }"
         data-cy="popup"
-      >{{ message }}</div>
+      >
+        {{ message }}
+      </div>
     </slot>
   </transition>
 </template>
@@ -34,7 +36,7 @@ export default {
       if (!this.submitEvent) return "";
       return this.submitEvent.result === "success"
         ? "Thank you for subscribing!"
-        : "Request failed. Please try again!";
+        : "Request failed!";
     },
 
     isError() {
