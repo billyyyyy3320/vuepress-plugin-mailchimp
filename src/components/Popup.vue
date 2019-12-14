@@ -60,20 +60,21 @@ export default {
 .submit-popup
   position fixed
   right 1em
-  top 5em
+  top $navbarHeight + 2em
   padding 1em
-  border 1px solid $accentColor
   border-radius 3px
-  background #fff
+  background-color $accentColor
+  color #fff
   box-shadow 0 4px 16px rgba(0, 0, 0, 0.5)
   text-align center
   z-index 2
+
   button
     margin-top 0.5em
     padding 0.25em 2em
-  &.error
-    border-color #c00
 
+  &.error
+    background-color #c00
 
 // transition
 .submit-popup-enter-active, .submit-popup-leave-active
