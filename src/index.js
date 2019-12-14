@@ -10,6 +10,11 @@ module.exports = options => {
     return;
   }
 
+  const shouldInjectPopup =
+    (options.popupConfig && options.popupConfig.enabled) || true;
+  const popupComponent =
+    (options.popupConfig && options.popupConfig.component) || "Popup";
+
   return {
     name: "mailchimp",
 
@@ -17,6 +22,8 @@ module.exports = options => {
 
     define: {
       MAILCHIMP_OPTIONS: JSON.stringify(options)
-    }
+    },
+
+    globalUIComponents: shouldInjectPopup ? popupComponent : undefined
   };
 };

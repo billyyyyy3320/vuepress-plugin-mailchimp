@@ -14,13 +14,16 @@
       autocorrect="off"
       data-cy="email"
     />
-    <button type="submit" class="newsletter__button" data-cy="submit">subscribe</button>
+    <button type="submit" class="newsletter__button" data-cy="submit">
+      subscribe
+    </button>
   </form>
 </template>
 
 <script>
-import addToMailchimp from "./mailchimpSubscribe";
-const { content, title } = JSON.parse(MAILCHIMP_OPTIONS);
+import addToMailchimp from "../mailchimpSubscribe";
+import event from "../event";
+import { content, title, popupEnabled } from "../options";
 
 export default {
   data() {
@@ -34,6 +37,7 @@ export default {
     onSubmit() {
       addToMailchimp(this.mail).then(res => {
         this.mail = "";
+        if (popupEnabled) event.$emit("submited", res);
       });
     }
   }

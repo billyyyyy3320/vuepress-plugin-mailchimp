@@ -96,6 +96,76 @@ To be rendered as newsletter's title in `<SimpleNewsletter/>`
 
 To be rendered as newsletter's content in `<SimpleNewsletter/>`
 
+### popupConfig
+
+- Type: `object`
+- Required: false
+- Default: See below
+
+#### enabled
+
+- Type: `boolean`
+- Default: true
+
+Showing the popup after subscribing. You can stop showing the popup by setting to `false`.
+
+#### popupComponent
+
+- Type: `string`
+- Default: `Popup`
+
+A custom component to replace the default popup component.
+
+**Also see**:
+
+- [UI Customization](#ui-customization)
+
+#### timeout
+
+- Type: `number`
+- Default: 3000
+
+## UI Customization
+
+The default popup component provides a default slot which gives you the ability to fully control the appearance of the popup.
+
+First, you need to create a global component (e.g. MyPopup) at .vuepress/components. There're some slot props `enabled`, `message`, `isError` to simplifies your customization:
+
+```vue
+<template>
+  <Popup v-slot="{ enabled, message, isError }">
+    <div v-if="enabled" class="my-submit-popup" :class="{ error: isError }">
+      <h1>UI Customization</h1>
+      {{ message }}
+    </div>
+  </Popup>
+</template>
+
+<script>
+import Popup from "vuepress-plugin-mailchimp/src/components/Popup";
+export default {
+  components: { Popup }
+};
+</script>
+
+<style lang="stylus">
+.submit-popup
+  position fixed
+  right 1em
+  top 5em
+  padding 1em
+  border-radius 3px
+  background green
+  text-align center
+  z-index 2
+  button
+    margin-top 0.5em
+    padding 0.25em 2em
+  &.error
+    border-color red
+</style>
+```
+
 ## Demo
 
 <SimpleNewsletter/>
