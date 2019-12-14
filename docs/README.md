@@ -137,6 +137,8 @@ First, you need to create a global component (e.g. MyNewsletter) at .vuepress/co
 - `content`The content you've set in [config](#content)
 - `mail`: No matter how you customize, you still need an email input. Please make sure binding this prop to the field.
 
+e.g.
+
 ```vue
 <template>
   <SimpleNewsletter v-slot="{ title, content, mail }">
@@ -184,6 +186,8 @@ The popup component also provides a default slot and slot props:
 - `message`: Default is `Thank you for subscribing!` or `Request failed!`.
 - `isError`: You'll need it if you'd like to have different ui when the subscribing is failed.
 
+e.g.
+
 ```vue
 <template>
   <Popup v-slot="{ enabled, message, isError }">
@@ -204,6 +208,41 @@ export default {
 <style>
 /* your style */
 </style>
+```
+
+### More
+
+This plugin use JSONP for cross domain request saving your from CORS issue. The method is exported from `mailchimpSubscribe.js` which accepts a required argument (email) and a optional fields. If you don't like the out-of-box component and the two approaches to customization can't meet your need, you might want to use this method to build your own component.
+
+e.g.
+
+```vue
+<template>
+  <div>
+    <input type="email" v-model="mail" placeholder="email" />
+    <input type="text" v-model="name" placeholder="name" />
+    <button @click="onCilck">Click me!</button>
+  </div>
+</template>
+
+<script>
+import subscribeToMailchimp from "vuepress-plugin-mailchimp/src/mailchimpSubscribe";
+export default {
+  data() {
+    return {
+      mail: "",
+      name: ""
+    };
+  },
+  methods: {
+    onCilck() {
+      subscribeToMailchimp(this.mail, { LNAME: name }).then(res => {
+        alert("Well done!");
+      });
+    }
+  }
+};
+</script>
 ```
 
 ## Demo
