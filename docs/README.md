@@ -31,7 +31,7 @@ module.exports = {
 
 ### `<SimpleNewsletter/>`
 
-This plugin provides a out-of-box component. Since it has been registered automatically, you can simply put it at your `.md` file.
+This plugin provides a out-of-box component. Since it has been registered automatically, you can simply use it in your `.md` file.
 
 - Source code:[SimpleNewsletter.vue](https://github.com/newsbielt703/vuepress-plugin-mailchimp/blob/master/src/SimpleNewsletter.vue)
 - Usage:
