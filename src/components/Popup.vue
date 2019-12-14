@@ -6,9 +6,7 @@
         class="submit-popup"
         :class="{ error: isError }"
         data-cy="popup"
-      >
-        {{ message }}
-      </div>
+      >{{ message }}</div>
     </slot>
   </transition>
 </template>
@@ -74,11 +72,11 @@ export default {
     padding 0.25em 2em
 
   &.error
-    background-color #c00
+    background-color $textColor
 
 // transition
 .submit-popup-enter-active, .submit-popup-leave-active
-  transition  transform .8s
+  transition transform 0.8s
 
 .submit-popup-enter, .submit-popup-leave-to
   transform translate(200%, 0)
