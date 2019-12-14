@@ -78,9 +78,8 @@ export default {
 
 // transition
 .submit-popup-enter-active, .submit-popup-leave-active
-  transition opacity 0.3s, transform 0.3s
+  transition  transform .8s
 
 .submit-popup-enter, .submit-popup-leave-to
-  opacity 0
-  transform translate(0, 50%) scale(0.5)
+  transform translate(200%, 0)
 </style>
