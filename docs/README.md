@@ -52,11 +52,11 @@ or
 // .vue file
 
 <template>
-  <SimplePagination />
+  <SimpleNewsletter />
 </template>
 
 <script>
-import { SimpleNewsletter } from "vuepress-plugin-mailchimp/src/SimpleNewsletter";
+import { SimpleNewsletter } from "vuepress-plugin-mailchimp/src/components/SimpleNewsletter";
 export default {
   components: {
     SimpleNewsletter
