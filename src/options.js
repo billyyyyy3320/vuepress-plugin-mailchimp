@@ -1,4 +1,4 @@
-const { endpoint, content, title, popupConfig = {} } = JSON.parse(
+const { endpoint, submitText, content, title, popupConfig = {} } = JSON.parse(
   MAILCHIMP_OPTIONS
 );
 
@@ -8,4 +8,4 @@ const {
   timeout: popupTimeout = 3000
 } = popupConfig;
 
-export { endpoint, content, title, popupEnabled, popupComponent, popupTimeout };
+export { endpoint, submitText, content, title, popupEnabled, popupComponent, popupTimeout };

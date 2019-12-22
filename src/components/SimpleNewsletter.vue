@@ -1,6 +1,11 @@
 <template>
   <form @submit.prevent="onSubmit" class="newsletter">
-    <slot :title="title" :content="content" :mail="mail">
+    <slot
+      :title="title"
+      :content="content"
+      :mail="mail"
+      :submitText="submitText"
+    >
       <div class="newsletter__title">{{ title }}</div>
       <div class="newsletter__content">{{ content }}</div>
       <input
@@ -16,7 +21,7 @@
         data-cy="email"
       />
       <button type="submit" class="newsletter__button" data-cy="submit">
-        subscribe
+        {{ submitText }}
       </button>
     </slot>
   </form>
@@ -25,14 +30,15 @@
 <script>
 import addToMailchimp from "../mailchimpSubscribe";
 import event from "../event";
-import { content, title, popupEnabled } from "../options";
+import { submitText, content, title, popupEnabled } from "../options";
 
 export default {
   data() {
     return {
       mail: "",
       title: title || "Newsletter",
-      content: content || "Subscribe to get my lastest content. No spam."
+      content: content || "Subscribe to get my lastest content. No spam.",
+      submitText: submitText || "Subscribe"
     };
   },
   methods: {
