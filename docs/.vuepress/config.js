@@ -1,7 +1,7 @@
 const { description } = require("../../package");
 
 module.exports = {
-  title: "vuepress-plugin-disqus-comment",
+  title: "vuepress-plugin-mailchimp",
 
   description: description,
 
