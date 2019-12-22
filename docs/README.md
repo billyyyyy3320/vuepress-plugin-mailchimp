@@ -96,6 +96,14 @@ To be rendered as newsletter's title in `<SimpleNewsletter/>`
 
 To be rendered as newsletter's content in `<SimpleNewsletter/>`
 
+### submitText
+
+- Type: `string`
+- Required: false
+- Default: `'Subscribe to get my lastest content. No spam.'`
+
+To be rendered as newsletter's submit text in `<SimpleNewsletter/>`
+
 ### popupConfig
 
 - Type: `object`
@@ -131,7 +139,7 @@ A custom component to replace the default popup component.
 
 The out-of-box component provides a default slot which gives you the ability to fully control the appearance.
 
-First, you need to create a global component (e.g. MyNewsletter) at .vuepress/components. There're some slot props to simplifies your customization:
+First, you need to create a global component (e.g. MyNewsletter) at .vuepress/components. There're some properties inside slot props to simplifies your customization:
 
 - `title`: The title you've set in [config](#title)
 - `content`The content you've set in [config](#content)
@@ -141,23 +149,23 @@ e.g.
 
 ```vue
 <template>
-  <SimpleNewsletter v-slot="{ title, content, mail }">
-    <div class="my-title">{{ title }}</div>
-    <div class="my-content">{{ content }}</div>
+  <SimpleNewsletter v-slot="slotProps">
+    <div class="my-title">{{ slotProps.title }}</div>
+    <div class="my-content">{{ slotProps.content }}</div>
     <input
       class="my-input"
       type="email"
       name="email"
       aria-label="Email"
       placeholder="Email"
-      v-model="mail"
+      v-model="slotProps.mail"
       required
       autocapitalize="off"
       autocorrect="off"
       data-cy="email"
     />
     <button type="submit" class="my-button" data-cy="submit">
-      STAY UP TO DATE
+      slotProps.submitText
     </button>
   </SimpleNewsletter>
 </template>
