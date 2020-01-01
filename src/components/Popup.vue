@@ -14,17 +14,13 @@
 </template>
 
 <script>
-import event from "../event";
-import { popupTimeout } from "../options";
+import event from '../event';
+import { popupTimeout } from '../options';
 export default {
   data() {
     return {
-      submitEvent: null
+      submitEvent: null,
     };
-  },
-
-  created() {
-    event.$on("submited", this.onSubmited);
   },
 
   computed: {
@@ -33,16 +29,20 @@ export default {
     },
 
     message() {
-      if (!this.submitEvent) return "";
-      return this.submitEvent.result === "success"
-        ? "Thank you for subscribing!"
-        : "Request failed!";
+      if (!this.submitEvent) return '';
+      return this.submitEvent.result === 'success'
+        ? 'Thank you for subscribing!'
+        : 'Request failed!';
     },
 
     isError() {
-      if (this.submitEvent && this.submitEvent.result === "error") return true;
+      if (this.submitEvent && this.submitEvent.result === 'error') return true;
       return false;
-    }
+    },
+  },
+
+  created() {
+    event.$on('submited', this.onSubmited);
   },
 
   methods: {
@@ -51,8 +51,8 @@ export default {
       setTimeout(() => {
         this.submitEvent = null;
       }, popupTimeout);
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,15 +1,15 @@
 <template>
-  <form @submit.prevent="onSubmit" class="newsletter">
+  <form class="newsletter" @submit.prevent="onSubmit">
     <slot :slotProps="slotProps">
       <div class="newsletter__title">{{ slotProps.title }}</div>
       <div class="newsletter__content">{{ slotProps.content }}</div>
       <input
+        v-model="slotProps.mail"
         class="newsletter__input"
         type="email"
         name="email"
         aria-label="Email"
         placeholder="Email"
-        v-model="slotProps.mail"
         required
         autocapitalize="off"
         autocorrect="off"
@@ -23,34 +23,34 @@
 </template>
 
 <script>
-import addToMailchimp from "../mailchimpSubscribe";
-import event from "../event";
-import { submitText, content, title, popupEnabled } from "../options";
+import addToMailchimp from '../mailchimpSubscribe';
+import event from '../event';
+import { submitText, content, title, popupEnabled } from '../options';
 
 export default {
   data() {
     return {
       slotProps: {
-        mail: "",
-        title: title || "Newsletter",
-        content: content || "Subscribe to get my lastest content. No spam.",
-        submitText: submitText || "Subscribe"
-      }
+        mail: '',
+        title: title || 'Newsletter',
+        content: content || 'Subscribe to get my lastest content. No spam.',
+        submitText: submitText || 'Subscribe',
+      },
     };
   },
   methods: {
     onSubmit() {
       addToMailchimp(this.slotProps.mail)
         .catch(err => {
-          this.slotProps.mail = "";
-          if (popupEnabled) event.$emit("submited", { result: "error" });
+          this.slotProps.mail = '';
+          if (popupEnabled) event.$emit('submited', { result: 'error' });
         })
         .then(res => {
-          this.slotProps.mail = "";
-          if (popupEnabled) event.$emit("submited", res);
+          this.slotProps.mail = '';
+          if (popupEnabled) event.$emit('submited', res);
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
