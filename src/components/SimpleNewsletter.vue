@@ -1,23 +1,25 @@
 <template>
   <form class="newsletter" @submit.prevent="onSubmit">
     <slot :slotProps="slotProps">
-      <div class="newsletter__title">{{ slotProps.title }}</div>
-      <div class="newsletter__content">{{ slotProps.content }}</div>
-      <input
-        v-model="slotProps.mail"
-        class="newsletter__input"
-        type="email"
-        name="email"
-        aria-label="Email"
-        placeholder="Email"
-        required
-        autocapitalize="off"
-        autocorrect="off"
-        data-cy="email"
-      />
-      <button type="submit" class="newsletter__button" data-cy="submit">
-        {{ slotProps.submitText }}
-      </button>
+      <div class="newsletter__wrap">
+        <div class="newsletter__title">{{ slotProps.title }}</div>
+        <div class="newsletter__content">{{ slotProps.content }}</div>
+        <input
+          v-model="slotProps.mail"
+          class="newsletter__input"
+          type="email"
+          name="email"
+          aria-label="Email"
+          placeholder="Email"
+          required
+          autocapitalize="off"
+          autocorrect="off"
+          data-cy="email"
+        />
+        <button type="submit" class="newsletter__button" data-cy="submit">
+          {{ slotProps.submitText }}
+        </button>
+      </div>
     </slot>
   </form>
 </template>
@@ -63,14 +65,16 @@ export default {
 .newsletter
   text-align center
   width 100%
-  max-width 420px
-  margin 1.5rem auto
-  padding 1.8rem 2.3rem
-  border-radius 3px
-  background #f8f8f8
   font-size 1rem
-  box-sizing border-box
   color $textColor
+
+  &__wrap
+    margin 1.5rem auto
+    padding 1.8rem 2.3rem
+    border-radius 3px
+    box-sizing border-box
+    max-width 420px
+    background #f8f8f8
 
   &__title
     font-size 1.7rem
