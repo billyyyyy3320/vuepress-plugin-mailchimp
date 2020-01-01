@@ -1,6 +1,6 @@
 import jsonp from 'jsonp';
 import queryString from 'query-string';
-import { endpoint } from './options';
+import { endpoint } from '@dynamic/mailchimpOptions';
 
 const subscribeToMailchimp = function addToMailchimp(email, fields) {
   const emailEncoded = encodeURIComponent(email);

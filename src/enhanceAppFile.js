@@ -1,4 +1,4 @@
-import { popupEnabled } from './options';
+import { popupEnabled } from '@dynamic/mailchimpOptions';
 
 export default ({ Vue }) => {
   Vue.component('SimpleNewsletter', () =>

@@ -15,7 +15,7 @@
 
 <script>
 import event from '../event';
-import { popupTimeout } from '../options';
+import { popupTimeout } from '@dynamic/mailchimpOptions';
 export default {
   data() {
     return {

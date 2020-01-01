@@ -25,7 +25,12 @@
 <script>
 import addToMailchimp from '../mailchimpSubscribe';
 import event from '../event';
-import { submitText, content, title, popupEnabled } from '../options';
+import {
+  submitText,
+  content,
+  title,
+  popupEnabled,
+} from '@dynamic/mailchimpOptions';
 
 export default {
   data() {

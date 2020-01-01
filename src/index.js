@@ -20,8 +20,24 @@ module.exports = options => {
 
     enhanceAppFiles: [path.resolve(__dirname, 'enhanceAppFile.js')],
 
-    define: {
-      MAILCHIMP_OPTIONS: JSON.stringify(options),
+    clientDynamicModules() {
+      return {
+        name: 'mailchimpOptions.js',
+        content: `
+    const { endpoint, submitText, content, title, popupConfig = {} } = ${JSON.stringify(
+      options
+    )}
+    
+    const {
+    enabled: popupEnabled = true,
+    component: popupComponent = "Popup",
+    timeout: popupTimeout = 3000
+    } = popupConfig;
+    
+    export { endpoint, submitText, content, title, popupEnabled, popupComponent, popupTimeout };
+    
+    `,
+      };
     },
 
     globalUIComponents: shouldInjectPopup ? popupComponent : undefined,
