@@ -149,7 +149,7 @@ e.g.
 
 ```vue
 <template>
-  <SimpleNewsletter v-slot="slotProps">
+  <SimpleNewsletter v-slot="{ slotProps }">
     <div class="my-title">{{ slotProps.title }}</div>
     <div class="my-content">{{ slotProps.content }}</div>
     <input
@@ -165,7 +165,7 @@ e.g.
       data-cy="email"
     />
     <button type="submit" class="my-button" data-cy="submit">
-      slotProps.submitText
+      {{ slotProps.submitText }}
     </button>
   </SimpleNewsletter>
 </template>
@@ -229,7 +229,7 @@ e.g.
   <div>
     <input type="email" v-model="mail" placeholder="email" />
     <input type="text" v-model="name" placeholder="name" />
-    <button @click="onCilck">Click me!</button>
+    <button @click="onClick">Click me!</button>
   </div>
 </template>
 
@@ -243,7 +243,7 @@ export default {
     };
   },
   methods: {
-    onCilck() {
+    onClick() {
       subscribeToMailchimp(this.mail, { LNAME: name }).then(res => {
         alert("Well done!");
       });
