@@ -27,12 +27,26 @@
 <script>
 import addToMailchimp from '../mailchimpSubscribe';
 import event from '../event';
-import {
-  submitText,
-  content,
-  title,
-  popupEnabled,
-} from '@dynamic/mailchimpOptions';
+import _debug from 'debug';
+
+const debug = _debug('plugin-mailchimp');
+
+/**
+ * If developers make UI customiztion and offer users an option whether to enable.
+ * It won't be able to import client dynamic modules if it's disabled.
+ * Use commonJs because dynamic import cannot be caught https://github.com/webpack/webpack/issues/5360
+ */
+let submitText, content, title, popupEnabled;
+
+try {
+  const options = require('@dynamic/mailchimpOptions');
+  submitText = options.submitText;
+  content = options.content;
+  title = options.title;
+  popupEnabled = options.popupEnabled;
+} catch (error) {
+  debug('Fail to get options', error.message);
+}
 
 export default {
   data() {
