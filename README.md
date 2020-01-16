@@ -2,6 +2,8 @@
 
 [![NPM version](https://img.shields.io/npm/v/vuepress-plugin-mailchimp)](https://www.npmjs.com/package/vuepress-plugin-mailchimp)
 [![NPM LICENSE](https://badgen.net/npm/license/vuepress-plugin-mailchimp)](https://github.com/newsbielt703/vuepress-plugin-mailchimp/blob/master/LICENSE)
+[![Circle ci](https://badgen.net/circleci/github/newsbielt703/vuepress-plugin-mailchimp)](https://circleci.com/gh/newsbielt703/workflows/vuepress-plugin-mailchimp)
+[![LGTM](https://badgen.net/lgtm/grade/g/newsbielt703/vuepress-plugin-mailchimp)](https://lgtm.com/projects/g/newsbielt703/vuepress-plugin-mailchimp)
 
 Simplifies subscribing new email addresses to a Mailchimp email list.
 
