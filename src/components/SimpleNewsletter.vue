@@ -54,7 +54,7 @@ export default {
       slotProps: {
         mail: '',
         title: title || 'Newsletter',
-        content: content || 'Subscribe to get my lastest content. No spam.',
+        content: content || 'Subscribe to get my latest content. No spam.',
         submitText: submitText || 'Subscribe',
       },
     };
