@@ -61,7 +61,7 @@ or
 </template>
 
 <script>
-import { SimpleNewsletter } from "vuepress-plugin-mailchimp/src/SimpleNewsletter";
+import SimpleNewsletter from "vuepress-plugin-mailchimp/src/SimpleNewsletter";
 export default {
   components: {
     SimpleNewsletter
