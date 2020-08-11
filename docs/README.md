@@ -31,7 +31,7 @@ module.exports = {
 
 ### `<SimpleNewsletter/>`
 
-This plugin provides a out-of-box component. Since it has been registered automatically, you can simply use it in your `.md` file.
+This plugin provides a out-of-box component. Since it has been registered automatically, you can simply use it in your `.md` or `.vue` files.
 
 - Source code:[SimpleNewsletter.vue](https://github.com/newsbielt703/vuepress-plugin-mailchimp/blob/master/src/SimpleNewsletter.vue)
 - Usage:
@@ -54,15 +54,6 @@ or
 <template>
   <SimpleNewsletter />
 </template>
-
-<script>
-import { SimpleNewsletter } from "vuepress-plugin-mailchimp/src/components/SimpleNewsletter";
-export default {
-  components: {
-    SimpleNewsletter
-  }
-};
-</script>
 ```
 
 - [output](#demo)
@@ -171,14 +162,11 @@ e.g.
 </template>
 
 <script>
-import SimpleNewsletter from "vuepress-plugin-mailchimp/src/components/SimpleNewsletter";
-export default {
-  components: { SimpleNewsletter }
-};
+/* ... */
 </script>
 
 <style>
-/* your style */
+/* ... */
 </style>
 ```
 
@@ -207,14 +195,11 @@ e.g.
 </template>
 
 <script>
-import Popup from "vuepress-plugin-mailchimp/src/components/Popup";
-export default {
-  components: { Popup }
-};
+/* ... */
 </script>
 
 <style>
-/* your style */
+/* ... */
 </style>
 ```
 

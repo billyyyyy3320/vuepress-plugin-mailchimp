@@ -36,7 +36,7 @@ module.exports = {
 
 ### `<SimpleNewsletter/>`
 
-This plugin provides a out-of-box component. Since it has been registered automatically, you can simply use it in your `.md` file.
+This plugin provides a out-of-box component. Since it has been registered automatically, you can simply use it in your `.md` or `.vue` files.
 
 - Source code:[SimpleNewsletter.vue](https://github.com/newsbielt703/vuepress-plugin-mailchimp/blob/master/src/SimpleNewsletter.vue)
 - Usage:
@@ -59,15 +59,6 @@ or
 <template>
   <SimplePagination />
 </template>
-
-<script>
-import { SimpleNewsletter } from "vuepress-plugin-mailchimp/src/SimpleNewsletter";
-export default {
-  components: {
-    SimpleNewsletter
-  }
-};
-</script>
 ```
 
 Check out the full [documentation](https://vuepress-plugin-mailchimp.billyyyyy3320.com/).
