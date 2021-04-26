@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "jsonp": "^0.2.1",
-    "query-string": "^6.9.0"
+    "query-string": "^7.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
